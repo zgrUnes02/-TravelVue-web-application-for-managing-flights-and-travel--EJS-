@@ -1,0 +1,81 @@
+<style>
+    #sidebar-dashboard {
+        transition: 0.4s;
+    }
+    #sidebar-dashboard:hover {
+        background-color: #d2d2d29a;
+    }
+    p {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+</style>
+<div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+    aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="staticBackdropLabel"> Menu </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <a style="text-decoration:none;color:black" href="/dashboard">
+            <div id="sidebar-dashboard">
+                <div>
+                    <p> Dashboard </p>
+                </div>
+                <div>
+                    <i id="sidebar-item" class='bx bxs-home' ></i>
+                </div>
+            </div>
+        </a>
+        <a style="text-decoration:none;color:black" href="/flights">
+            <div id="sidebar-dashboard">
+                <div>
+                    <p> Flights </p>
+                </div>
+                <div>
+                    <i id="sidebar-item" class='bx bxs-plane-alt'></i>
+                </div>
+            </div>
+        </a>
+        <a style="text-decoration:none;color:black" href="/users">
+            <div id="sidebar-dashboard">
+                <div>
+                    <p> Users </p>
+                </div>
+                <div>
+                    <i id="sidebar-item" class='bx bxs-universal-access' ></i>
+                </div>
+            </div>
+        </a>
+        <a style="text-decoration:none;color:black" href="/requests">
+            <div id="sidebar-dashboard">
+                <div>
+                    <p> Requests </p>
+                </div>
+                <div>
+                    <i id="sidebar-item" class='bx bxs-folder-plus'></i>
+                </div>
+            </div>
+        </a>
+        <a style="text-decoration:none;color:black" href="/profile">
+            <div id="sidebar-dashboard">
+                <div>
+                    <p> Profile </p>
+                </div>
+                <div>
+                    <i id="sidebar-item" class='bx bxs-user'></i>
+                </div>
+            </div>
+        </a>
+        <a style="text-decoration:none;color:black" href="/logout">
+            <div id="sidebar-dashboard">
+                <div>
+                    <p> Log out </p>
+                </div>
+                <div>
+                    <i id="sidebar-item" class='bx bx-walk' ></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

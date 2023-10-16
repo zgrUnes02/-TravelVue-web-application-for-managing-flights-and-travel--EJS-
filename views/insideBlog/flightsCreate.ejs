@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../createForm.css">
+    <title> Create a flight </title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/css/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+</head>
+<body>    
+
+    <%- include('../layout/sidebar') %>
+    <%- include('../layout/navbarDashboard') %>
+
+    <section id="container">
+
+        <div id="form">
+            <form action="/flight/create" method="post">
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-black"> Country </label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Country name" aria-describedby="nameHelp" name="country" required>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-black"> City </label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="City name" aria-describedby="emailHelp" name="city" required>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-black"> Starting date </label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" name="startDate" required>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-black"> Starting time </label>
+                    <input type="time" class="form-control" id="exampleInputPassword1" name="startTime" required>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+    
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label text-black"> Duration (day) </label>
+                    <input type="number" class="form-control" placeholder="Duration" id="exampleInputPassword1" name="duration" required>
+                    <div id="emailHelp" class="form-text text-danger"></div>
+                </div>
+    
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary"> Create </button>
+                    <button type="reset" class="btn btn-danger"> Reset </button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <img src="../../images/airplane.jpg" alt="image flight">
+        </div>
+
+    </section>
+
+</body>
+</html>

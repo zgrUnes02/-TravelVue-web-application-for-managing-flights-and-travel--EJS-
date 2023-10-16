@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*! ------------- navbar css ------------- */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+    background-color: black;
+}
+
+nav div img {
+    width: 100px;
+}
+
+nav div span i {
+    font-size: 35px;
+    color: white;
+    box-shadow: 0 0 15px white;
+    border-radius: 20px;
+}
+
+/*! ------------- section css ------------- */
+
+#dashboard {
+    display: grid ;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows: repeat(2 , 300px) ;
+    margin: 0 100px ;
+}
+
+#top {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    background-image: url('/images/travel.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px 50px;
+    border-radius: 20px;
+}
+
+#bottom-left {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-image: url('/images/users.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px 50px;
+    border-radius: 20px;
+}
+
+#bottom-right {
+    grid-column-start: 4;
+    grid-column-end: 8;
+    background-image: url('/images/requests.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px 50px;
+    border-radius: 20px;
+}
+
+section h1 {
+    color: white;
+    font-family: monospace;
+}
+
+section a {
+    text-decoration: none;
+    color:black;
+    background: none;
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 2px solid white;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+section a:hover {
+    color:black;
+    background-color: white;
+}
+
+i {
+    color: white;
+    font-size: 40px;
+    margin-left: -30px;
+    margin-right: 20px;
+}
+
+#logo-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sidebar-dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sidebar-dashboard div p {
+    font-size: 25px;
+}
+
+#sidebar-item {
+    color: black;
+    font-size: 30px;
+}

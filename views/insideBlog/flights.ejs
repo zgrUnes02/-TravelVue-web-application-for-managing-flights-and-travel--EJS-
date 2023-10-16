@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/flights.css">
+    <title> Flights </title>
+</head>
+<body>
+
+    <%- include('../layout/navbarDashboard') %>
+    <%- include('../layout/sidebar') %>
+
+    <section class="mt-5 table-responsive">
+        <table class="table table-bordered table-hover text-center container">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col"> Country </th>
+                    <th scope="col"> City </th>
+                    <th scope="col"> Starting date </th>
+                    <th scope="col"> Duration </th>
+                    <th scope="col" width="20%"> Process </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if ( flights ) { %>
+                    <% flights.map((flight , index) => { %>
+                        <tr>
+                            <th scope="row"> <%= index + 1 %> </th>
+                            <td> <%= flight.country %> </td>
+                            <td> <%= flight.city %> </td>
+                            <td> <%= flight.startDate.toISOString().slice(0, 10) %> </td>
+                            <td> <%= flight.duration %> days </td>
+                            <td>
+                                <a href="/flights/edit/<%= flight._id  %>" class="btn btn-outline-primary" style="width: 80px;"> Edit </a>
+                                <a href="/flights/delete/<%= flight._id %>" class="btn btn-outline-danger" style="width: 80px;"> Delete </a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+
+    </section>
+
+    <a style="margin-left: 120px;" class="btn btn-outline-success mt-4" href="/flight/form/create">
+        Create new flight
+    </a>
+
+
+</body>
+</html>

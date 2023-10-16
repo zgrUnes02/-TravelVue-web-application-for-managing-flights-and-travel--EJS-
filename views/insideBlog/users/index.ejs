@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Available flights </title>
+    <style>
+        #container {
+            margin: 50px auto;
+        }
+        .overlay {
+            background-image: url('/images/homePicture.jpeg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 300px;
+        }
+        #info {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('../../layout/navbarDashboard') %>
+    <%- include('../../layout/sidebarUser') %>
+
+    <div class="row container" id="container">
+
+        <% if ( flights ) { %>
+            <% flights.forEach((flight)=> { %>
+                <div class="body col-4 mb-4">
+                    <div class="card credentialing">
+                        <div class="overlay"> </div>
+                        <p id="info" class="mt-2"> Country/City : <b> <%= flight.country %> / <%= flight.city %> </b> </p>
+                        <p id="info" mt-2> Date : <b> <%= flight.startDate.toISOString().slice(0, 10) %> </b> </p>
+                        <p id="info" mt-2> Duration : <b> <%= flight.duration %> days </b> </p>
+                        <a href="/user/add/flight/<%= flight._id%>" class="btn btn-success">
+                            Choose
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+
+    </div>
+
+</body>
+</html>

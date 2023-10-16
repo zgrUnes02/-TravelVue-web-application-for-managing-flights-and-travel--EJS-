@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/flights.css">
+    <title> Users </title>
+</head>
+<body>
+    
+    <%- include('../layout/navbarDashboard') %>
+    <%- include('../layout/sidebar') %>
+
+    <section class="mt-5 table-responsive">
+        <table class="table table-bordered table-hover text-center container">
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">#</th>
+                    <th scope="col"> Name </th>
+                    <th scope="col"> Email </th>
+                    <th scope="col"> Status </th>
+                    <th scope="col" width="20%"> Process </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if ( users ) { %>
+                    <% users.map((user , index) => { %>
+                        <tr>
+                            <th scope="row"> <%= index + 1 %> </th>
+                            <td> <%= user.full_name %> </td>
+                            <td> <%= user.email %> </td>
+                            <% if ( user.status == 'blocked' ) { %>
+                                <td>
+                                    <span class="badge badge-danger text-danger bg-warning"> <%= user.status %> </span> 
+                                </td>
+                            <% } %>
+                            <% if ( user.status == 'active' ) { %>
+                                <td>
+                                    <span class="badge badge-danger text-success bg-warning"> <%= user.status %> </span> 
+                                </td>
+                            <% } %>
+                            <td>
+                                <% if ( user.status == 'active' ) { %>
+                                    <a href="/user/change/status/<%= user._id  %>" class="btn btn-outline-danger" style="width: 80px;"> Block </a>
+                                <% } %>
+
+                                <% if ( user.status == 'blocked' ) { %>
+                                    <a href="/user/change/status/<%= user._id  %>" class="btn btn-outline-success" style="width: 80px;"> Unblock </a>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+
+    </section>
+
+</body>
+</html>

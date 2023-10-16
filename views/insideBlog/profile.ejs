@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/profile.css">
+    <title> Profile </title>
+</head>
+<body>
+
+    <%- include('../layout/navbarDashboard') %>
+
+    <% if ( user.role == 'user' ) { %>
+        <%- include('../layout/sidebarUser') %>
+    <% } else { %>
+        <%- include('../layout/sidebar') %>
+    <% } %>
+
+    
+    <div class="big-div">
+
+        <hr>
+        <h1 class="text-black mb-4"> Change your name and your email </h1>
+        <section class="section-1">
+            <form action="/update/profile" method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-black"> Full name </label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nameHelp" placeholder="Full name" name="full_name" required value="<%= user.full_name %>">
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-black"> Email address </label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address" name="email" required value="<%= user.email %>">
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+
+                <input type="hidden" name="changeInfo" value="information">
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success"> Change information </button>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+        <h1 class="text-black mb-4"> Change your password </h1>
+        <section class="section-2">
+            <form action="/update/profile" method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-black"> Current password </label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Current password" aria-describedby="nameHelp" name="current_password" required>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+            
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-black"> New password </label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" placeholder="New password" aria-describedby="emailHelp" name="new_password" required>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label text-black"> Confirm new password </label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Confirm new password" aria-describedby="emailHelp" name="confirm_password" required>
+                    <div id="emailHelp" class="form-text"></div>
+                </div>
+
+                <input type="hidden" name="changeInfo" value="password">
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-success"> Change password </button>
+                </div>
+            </form>
+        </section>
+
+    </div>
+        
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/register.css">
+    <title> Register</title>
+</head>
+<body>
+    <%- include('layout/navbar') %>
+   
+    <section>
+        <form action="/register/authentication" method="post">
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white">Full name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="nameHelp" name="full_name" required>
+                <div id="emailHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-white">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+                <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-white">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+                <div id="emailHelp" class="form-text"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-white">Confirm your password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="confirm_password" required>
+                <div id="emailHelp" class="form-text text-danger">
+                    <% if ( errorMessageConfirmation ) { %>
+                        <%= errorMessageConfirmation %>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 90px auto ;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#container #form  {
+    width: 35%;
+}
+
+#container div img {
+    width: 500px;
+}
+
